@@ -32,9 +32,10 @@ html{
 }
 
 :root {
+    /*Change the colors */
     --bg: #16161a; 
-    --primary: #7f5af0;   /* purple */
-    --secondary: #2cb67d; /* green */
+    --primary: #ffff;   /* purple */
+    --secondary: #d3191c; /* red */
     --dark: #383a61;      /* dark blue/gray */
     --muted: #94a1b2;     /* light gray */
     --light: #fffffe;     /* almost pure white */
@@ -168,7 +169,6 @@ nav ul li:hover::after{
     align-items: center;
     justify-content: center;
     padding: 10px;
-    mix-blend-mode: lighten;
 }
 
 .wrapper {
@@ -190,7 +190,7 @@ nav ul li:hover::after{
     left: 20px;
     width: 100%;
     height: 100%;
-    border: 2px solid #2cb67d;
+    border: 2px solid #d3191c;
     z-index: 1;
     transition: transform 0.3s ease;
 }
@@ -206,11 +206,11 @@ nav ul li:hover::after{
 @keyframes pulseBorder {
     0%, 100% {
         transform: translate(0, 0);
-        border-color: #2cb67d;
+        border-color: #d3191c;
     }
     50% {
         transform: scale(1.05);
-        border-color: #23a065;
+        border-color: #d3191c;
     }
 }
 
@@ -314,8 +314,8 @@ main{
 
 .skill-box:hover {
     transform: rotateY(10deg) rotateX(5deg) scale(1.1);
-    box-shadow: 0 15px 25px rgba(44, 182, 125, 0.6);
-    border-color: #7f5af0;
+    box-shadow: 0 15px 25px rgba(255, 255, 255, 0.6);
+    border-color: #d3191c;
 }
 
 .skill-box:hover img {
@@ -364,7 +364,7 @@ main{
 
 .project:hover{
     transform: scale(1.1);
-    box-shadow: 0 15px 25px rgba(44, 182, 125, 0.6);
+    box-shadow: 0 15px 25px rgba(255, 255, 255, 0.6);
     border-color: #7f5af0;
 }
 
@@ -398,7 +398,6 @@ main{
 
 #contact{
     width: 100%;
-    background-color: var(--bg);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -442,7 +441,7 @@ main{
 .contact-container textarea {
     width: 100%;
     padding: 0.5rem;
-    border: 2px solid var(--dark);
+    border: 2px solid var(--light);
     border-radius: 10px;
     background-color: transparent;
     color: var(--light);
@@ -456,7 +455,7 @@ main{
 }
 
 .contact-container button {
-    background-color: var(--primary);
+    background-color: var(--secondary);
     color: var(--light);
     border: none;
     padding: 1rem 1rem;
@@ -513,7 +512,7 @@ main{
     border: none;
     padding: 5px;
     border-radius: 50%;
-    background-color: var(--dark);
+    background-color: var(--bg);
     cursor: pointer;
     transition: all 0.4s ease;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
@@ -523,7 +522,7 @@ main{
 .bnt button:hover {
     width: 100px;
     height: 100px;
-    background-color: white;
+    background-color: var(--primary);
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
 }
 
@@ -535,6 +534,8 @@ main{
     color: white;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+
 
 footer{
     display: flex;
@@ -553,6 +554,68 @@ footer span{
 
 /*Tablets*/
 
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .profile-info,
+    .profile-img {
+        width: 100%;
+        padding: 2rem;
+    }
+    header nav ul {
+        align-items: center;
+    }
+
+    main{
+        padding: 0 4rem;
+    }
+    
+    #about{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, auto);
+        gap: 2rem;
+    }
+
+    .about-me{
+        padding: 2rem;
+        font-size: 2rem;
+    }
+
+    .skills{
+        padding: 2rem;
+    }
+
+    .skills p{
+        font-size: 2rem;
+    }
+
+    .about-me span{
+        font-size: 2rem;
+    }
+
+    .bnt {
+        gap: 20px;
+        bottom: 10px;
+    }
+
+    .projects-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+    }
+
+    #contact{
+        min-height: auto;
+    }
+
+    .contact-container{
+        width: 100%;
+    }
+}
+
 @media (max-width: 768px) {
     .hero {
         flex-direction: column;
@@ -566,11 +629,11 @@ footer span{
     header nav ul {
         align-items: center;
     }
-    .bnt {
-        gap: 20px;
-        bottom: 10px;
-    }
 
+    main{
+        padding: 0 2rem;
+    }
+    
     #about{
         display: grid;
         grid-template-columns: 1fr;
@@ -578,11 +641,34 @@ footer span{
         gap: 2rem;
     }
 
-    
+    .about-me{
+        padding: 1rem;
+    }
+
+    .skills{
+        padding: 1rem;
+    }
+
+    .skills p{
+        font-size: 1rem;
+    }
+
+    .about-me span{
+        font-size: 1rem;
+    }
+
+    .bnt {
+        gap: 20px;
+        bottom: 10px;
+    }
 
     .projects-container{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+    }
+
+    .contact-container{
+        width: 100%;
     }
 }
 /*Mobile*/
@@ -590,19 +676,65 @@ footer span{
 @media (max-width: 480px) {
     .hero {
         flex-direction: column;
-        height: auto;
-        padding: 10px;
+        min-height: auto;
+        padding: 1rem;
+        gap: 1rem;
     }
     .profile-info,
     .profile-img {
         width: 100%;
         padding: 1rem;
     }
+
+    .profile-img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+    }
+    .bg-img,
+    .profile-img img{
+        max-width: 80%;
+    }
+
+    .wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .profile-info .name{
+        font-size: 2.5rem;
+    }
+
+    .profile-info .role{
+        font-size: 1.5rem;
+    }
+    
     header nav ul {
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
     }
+
+    header nav img {
+        max-width: 50%;
+    }
+
+    header nav a{
+        font-size: 1rem;
+    }
+
+    main{
+        width: 100%;
+        padding: 0 2rem;
+    }
+
+    .about-img img{
+        width: 80%;
+    }
+
     .bnt {
         gap: 15px;
         bottom: 5px;

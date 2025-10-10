@@ -27,7 +27,7 @@ html{
 }
 
 ::-webkit-scrollbar-thumb{
-    background-color: var(--muted);
+    background-color: var(--secondary);
     border-radius: 6px;
 }
 
@@ -39,6 +39,24 @@ html{
     --dark: #383a61;      /* dark blue/gray */
     --muted: #94a1b2;     /* light gray */
     --light: #fffffe;     /* almost pure white */
+    --border-bottom-color: white;  /* white */
+}
+
+html[data-theme="light"] {
+    --bg: #ffffff;      
+    --primary: #0b0b0b;     
+    --secondary: #d3191c;   
+    --dark: #e6e8f2;        
+    --muted: #6b7280;       
+    --light: #000;   
+    --border-bottom-color: black;    
+}
+
+
+*,
+*::before,
+*::after {
+    transition: background-color 240ms ease, color 240ms ease, border-color 240ms ease, box-shadow 240ms ease;
 }
 
 /*Animations*/
@@ -91,6 +109,25 @@ header nav ul{
     display: flex;
     justify-content: space-evenly;
     list-style: none;
+}
+
+
+/* Dark mode */
+.theme-toggle {
+    border: 2px solid transparent;
+    background: transparent;
+    color: var(--primary);
+    height: 40px;
+    width: 80px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle img{
+    width: 40px;
+    height: 40px;
 }
 
 nav ul a{
@@ -147,11 +184,6 @@ nav ul li:hover::after{
     font-weight: 400;
     font-style: normal;
     transition: color 0.4s ease-in-out;
-}
-
-.hero .name:hover{
-    cursor: pointer;
-    color: white;
 }
 
 .hero .role{
@@ -291,7 +323,7 @@ main{
 
 .skill-box {
     background: var(--bg);
-    border-bottom: 4px solid var(--light);
+    border-bottom: 4px solid var(--border-bottom-color);
     border-radius: 12px;
     width: 120px;
     height: 150px;
@@ -388,12 +420,6 @@ main{
     text-decoration: none;
     color: var(--light);
 }
-
-
-
-
-
-
 
 
 #contact{

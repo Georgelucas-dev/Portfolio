@@ -591,6 +591,7 @@ footer span{
         width: 100%;
         padding: 2rem;
     }
+
     header nav ul {
         align-items: center;
     }
@@ -632,6 +633,12 @@ footer span{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
     }
+
+    .project{
+        width: 800px;
+        width: 100%;
+    }
+
 
     #contact{
         min-height: auto;

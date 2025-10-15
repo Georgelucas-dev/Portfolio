@@ -405,7 +405,7 @@ main{
     width: 100%;
     border-radius: 10px;
     height: 200px;
-    object-fit: cover;
+    object-fit:contain;
 }
 
 .project .bnt-link{
@@ -635,7 +635,7 @@ footer span{
     }
 
     .project{
-        width: 800px;
+        height: 100px;
         width: 100%;
     }
 
@@ -698,6 +698,14 @@ footer span{
     .projects-container{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+    }
+
+    .projects-container .project{
+        height: 500px;
+        gap: 0.2rem;
+    }
+    .profile-img{
+        height: 300px;
     }
 
     .contact-container{

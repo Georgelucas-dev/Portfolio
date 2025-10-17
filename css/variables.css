@@ -1,0 +1,62 @@
+::selection {
+  background-color: var(--light); 
+  color: var(--bg);
+}
+
+/* For older Firefox versions, use ::-moz-selection */
+::-moz-selection {
+  background-color: var(--light);
+  color: var(--bg);
+}
+
+::-webkit-scrollbar{
+    width: 12px;
+    background-color: var(--bg);
+
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--secondary);
+    border-radius: 6px;
+}
+
+:root {
+    /*Change the colors */
+    --bg: #16161a; 
+    --primary: #ffff;   /* purple */
+    --secondary: #d3191c; /* red */
+    --dark: #383a61;      /* dark blue/gray */
+    --muted: #94a1b2;     /* light gray */
+    --light: #fffffe;     /* almost pure white */
+    --border-bottom-color: white;  /* white */
+}
+
+html[data-theme="light"] {
+    --bg: #ffffff;      
+    --primary: #0b0b0b;     
+    --secondary: #d3191c;   
+    --dark: #e6e8f2;        
+    --muted: #6b7280;       
+    --light: #000;   
+    --border-bottom-color: black;    
+}
+
+
+*,
+*::before,
+*::after {
+    transition: background-color 240ms ease, color 240ms ease, border-color 240ms ease, box-shadow 240ms ease;
+}
+
+/*Animations*/
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

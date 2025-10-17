@@ -1,0 +1,6 @@
+body{
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    background-color: var(--bg);
+    animation: fadeIn 1.3s cubic-bezier(0.23, 1, 0.32, 1);
+}

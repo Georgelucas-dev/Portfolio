@@ -162,10 +162,22 @@
             <button><a rel="noopener noreferrer" href="https://www.instagram.com/georgelucasp_/"><img src="./assets/instagram.png" alt="Instagram"></a></button>
             <button><a rel="noopener noreferrer" href="https://www.linkedin.com/in/george-lucas-241680367/"><img src="./assets/linkedin.png" alt="LinkedIn"></a></button>
         </div>
-
+        
+        <div id="cursor-div">
+            
+        </div>
+        
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script>
         AOS.init();
+        
+        // Initialize cursor
+        const cursor = document.getElementById('cursor-div');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+        
         </script>
         <script src="script.js"></script>
 </body>

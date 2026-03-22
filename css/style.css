@@ -21,8 +21,13 @@ html {
   scroll-behavior: smooth;
 }
 
+::selection {
+  background: var(--white);
+  color: var(--black);
+}
+
 body {
-  background: var(--black);
+  background: #0c0a09;
   color: var(--white);
   font-family: var(--font-body);
   font-weight: 300;

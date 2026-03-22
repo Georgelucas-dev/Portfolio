@@ -537,11 +537,12 @@
     @media (max-width: 768px) {
       nav { padding: 18px 24px; }
       .nav-links { gap: 20px; }
+      .nav-logo { font-size: 10px; letter-spacing: 0.15em; }
 
       #hero { grid-template-columns: 1fr; min-height: auto; }
       .hero-left { padding: 80px 24px 40px; border-right: none; border-bottom: 0.5px solid var(--line); }
       .hero-right { padding: 40px 24px 56px; }
-      .hero-name { font-size: clamp(52px, 14vw, 80px); }
+      .hero-name { font-size: clamp(52px, 14vw, 80px); margin-bottom: 20px; }
 
       section { padding: 52px 24px; }
 

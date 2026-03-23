@@ -185,3 +185,14 @@ if (exploreBtn) {
     }
   });
 }
+
+
+const themeToggle = document.getElementById("changerColorTheme");
+const currentImg = document.getElementById("currentThemeImg");
+
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("light-theme");
+  currentImg.src = document.body.classList.contains("light-theme")
+    ? "./assets/night-mode.png"
+    : "./assets/light-mode (1).png";
+});

@@ -7,8 +7,9 @@
 }
 
 :root {
-  --black: #080808;
+  --black: #000;
   --white: #f5f4f0;
+  --hover: #fff;
   --gray-dim: rgba(245, 244, 240, 0.35);
   --gray-mid: rgba(245, 244, 240, 0.55);
   --line: rgba(245, 244, 240, 0.1);
@@ -27,11 +28,20 @@ html {
 }
 
 body {
-  background: #0c0a09;
+  background: var(--black);
   color: var(--white);
   font-family: var(--font-body);
   font-weight: 300;
   overflow-x: hidden;
+}
+
+body.light-theme {
+  --black: #ffffff;
+  --white: #0a0a0a;
+  --hover: #111;
+  --gray-dim: rgba(10, 10, 10, 10);
+  --gray-mid: rgba(10, 10, 10, 0.7);
+  --line: rgba(10, 10, 10, 0.15);
 }
 
 /* ── Cursor ── */
@@ -122,17 +132,51 @@ nav {
   align-items: center;
   padding: 20px 48px;
   border-bottom: 0.5px solid var(--line);
-  background: rgba(8, 8, 8, 0.85);
+  background: var(--black);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 
 .nav-logo {
-  font-family: var(--font-mono);
-  font-size: 12px;
+  font-family: var(--font-body);
+  font-size: 1.25rem;
   letter-spacing: 0.2em;
   color: var(--gray-dim);
   text-transform: uppercase;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-theme-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--gray-dim);
+  font-size: 16px;
+  transition: color 0.2s;
+}
+
+.nav-theme-toggle:hover {
+  color: var(--white);
+}
+
+.nav-theme-toggle button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.nav-theme-toggle button:hover {
+  color: var(--white);
+}
+
+.nav-theme-toggle button img {
+  width: 24px;
+  height: 24px;
 }
 
 .nav-links {
@@ -194,7 +238,7 @@ nav {
 }
 
 .hero-name .dim {
-  color: rgba(245, 244, 240, 0.2);
+  color: var(--gray-mid);
 }
 
 .hero-cta {
@@ -263,7 +307,6 @@ nav {
   opacity: 0;
   animation: fadeUp 0.6s ease forwards 0.3s;
 }
-
 
 .dot {
   width: 6px;
@@ -365,7 +408,11 @@ section {
 }
 
 .project-card:hover {
-  background: #111;
+  background: var(--hover);
+}
+
+.project-card:hover * {
+  color: var(--black);
 }
 
 .project-num {
@@ -377,6 +424,7 @@ section {
 
 .project-title {
   font-family: var(--font-display);
+  color: var(--white);
   font-size: 22px;
   font-weight: 700;
   line-height: 1.2;
@@ -582,7 +630,7 @@ footer {
     gap: 20px;
   }
   .nav-logo {
-    font-size: 10px;
+    font-size: 16px;
     letter-spacing: 0.15em;
   }
 

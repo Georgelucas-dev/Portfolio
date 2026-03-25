@@ -12,7 +12,7 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.1 },
+  { threshold: 0.3 },
 );
 
 reveals.forEach((el) => observer.observe(el));
@@ -21,7 +21,7 @@ reveals.forEach((el) => observer.observe(el));
 document.querySelectorAll(".skill-bar-fill").forEach((bar) => {
   const rect = bar.getBoundingClientRect();
   if (rect.top < window.innerHeight) {
-    setTimeout(() => (bar.style.width = bar.dataset.width + "%"), 300);
+    setTimeout(() => (bar.style.width = bar.dataset.width + "%"), 400);
   }
 });
 

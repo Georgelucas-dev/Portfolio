@@ -50,7 +50,7 @@ body.light-theme {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid #fff;
+  border: 2px solid #fff;
   position: fixed;
   top: 0;
   left: 0;
@@ -402,7 +402,7 @@ section {
   justify-content: space-between;
   min-height: 240px;
   cursor: pointer;
-  transition: background 0.25s;
+  transition: background 0.5s ease;
   text-decoration: none;
   color: inherit;
 }
@@ -429,6 +429,7 @@ section {
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 10px;
+  transition: color 0.5s ease;
 }
 
 .project-desc {
@@ -484,12 +485,12 @@ section {
 
 .skill-bar-bg {
   height: 1px;
-  background: rgba(245, 244, 240, 0.08);
+  background: var(--line);
 }
 
 .skill-bar-fill {
   height: 1px;
-  background: rgba(245, 244, 240, 0.45);
+  background: var(--white);
   width: 0;
   transition: width 1s ease;
 }
@@ -558,12 +559,13 @@ section {
   align-items: center;
   cursor: pointer;
   text-decoration: none;
-  color: inherit;
+  color: var(--white);
   transition: background 0.2s;
 }
 
 .social-item:hover {
-  background: #111;
+  background: var(--hover);
+  color: var(--black);
 }
 
 .social-name {
